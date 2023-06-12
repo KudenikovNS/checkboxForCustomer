@@ -1,0 +1,150 @@
+body {
+  background-color: #252526;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.left {
+  text-align: center;
+  background-color: #171718;
+  box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+label::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Качество */
+.quality-checkbox {
+  transition: background-color 0.3s;
+}
+
+#quality-checkbox:checked + .quality-checkbox {
+  background-color: rgb(241, 156, 156);
+  transition: background-color 0.3s;
+}
+
+#quality-checkbox + label::before {
+  background-color: rgb(168, 129, 129);
+  transition: background-color 0.3s;
+}
+
+#quality-checkbox:checked + label::before {
+  transform: translateX(20px);
+  background-color: rgb(223, 67, 67);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#quality-checkbox:not(:checked) + label::before {
+  transform: translateX(0);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Быстрота */
+.speed-checkbox {
+  transition: background-color 0.3s;
+}
+
+#speed-checkbox:checked + .speed-checkbox {
+  background-color: rgb(237, 241, 156);
+  transition: background-color 0.3s;
+}
+
+#speed-checkbox + label::before {
+  background-color: rgb(163, 168, 129);
+  transition: background-color 0.3s;
+}
+
+#speed-checkbox:checked + label::before {
+  transform: translateX(20px);
+  background-color: rgb(141, 152, 46);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#speed-checkbox:not(:checked) + label::before {
+  transform: translateX(0);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Цена */
+.cheap-checkbox {
+  transition: background-color 0.3s;
+}
+
+#cheap-checkbox:checked + .cheap-checkbox {
+  background-color: rgb(181, 241, 156);
+  transition: background-color 0.3s;
+}
+
+#cheap-checkbox + label::before {
+  background-color: rgb(129, 168, 129);
+  transition: background-color 0.3s;
+}
+
+#cheap-checkbox:checked + label::before {
+  transform: translateX(20px);
+  background-color: rgb(46, 152, 51);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#cheap-checkbox:not(:checked) + label::before {
+  transform: translateX(0);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.text-center {
+  color: #fff;
+}
+
+.text {
+  padding-left: 15px;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .left {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
