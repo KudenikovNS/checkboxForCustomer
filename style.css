@@ -7,19 +7,25 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  /*   height: 50%; */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   background-color: #171718;
   box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 10px;
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  /*   width: 80%; */
+  max-width: 600px;
 }
 
 .checkbox-container {
@@ -34,8 +40,8 @@ input[type="checkbox"] {
 label {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 20px;
+  width: 60px;
+  height: 30px;
   background-color: #fff;
   border-radius: 10px;
   cursor: pointer;
@@ -44,10 +50,10 @@ label {
 label::before {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   transition: transform 0.3s ease-in-out;
 }
@@ -68,7 +74,7 @@ label::before {
 }
 
 #quality-checkbox:checked + label::before {
-  transform: translateX(20px);
+  transform: translateX(30px);
   background-color: rgb(223, 67, 67);
   transition: transform 0.3s, background-color 0.3s;
 }
@@ -94,7 +100,7 @@ label::before {
 }
 
 #speed-checkbox:checked + label::before {
-  transform: translateX(20px);
+  transform: translateX(30px);
   background-color: rgb(141, 152, 46);
   transition: transform 0.3s, background-color 0.3s;
 }
@@ -120,7 +126,7 @@ label::before {
 }
 
 #cheap-checkbox:checked + label::before {
-  transform: translateX(20px);
+  transform: translateX(30px);
   background-color: rgb(46, 152, 51);
   transition: transform 0.3s, background-color 0.3s;
 }
@@ -131,20 +137,45 @@ label::before {
 }
 
 .text-center {
+  font-size: 30px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .text {
+  font-size: 25px;
   padding-left: 15px;
   color: #fff;
 }
 
 @media (max-width: 600px) {
+  .container {
+    height: auto;
+  }
+
   .left {
     padding: 10px;
+    width: 100%;
+    border-radius: 0;
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 24px;
   }
+
+  .text {
+    font-size: 16px;
+  }
+  /*
+  label {
+    width: 40px;
+    height: 20px;
+  }
+
+  label::before {
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+  } */
 }
