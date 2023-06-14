@@ -1,36 +1,42 @@
 body {
   background-color: #252526;
+  margin: 0 auto;
 }
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  /*   height: 50%; */
+  justify-content: center;
+  height: 100vh;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
-.left {
+.checkbox {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 37.5rem;
+  padding: 20px;
   background-color: #171718;
   box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
-  padding: 20px;
   border-radius: 10px;
-  /*   width: 80%; */
-  max-width: 600px;
 }
 
-.checkbox-container {
+.checkbox__text {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.checkbox__container {
   display: flex;
   align-items: center;
+  width: 250px;
+}
+
+.text {
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 15px;
 }
 
 input[type="checkbox"] {
@@ -43,7 +49,7 @@ label {
   width: 60px;
   height: 30px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -58,8 +64,7 @@ label::before {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Качество */
-.quality-checkbox {
+.label-checkbox {
   transition: background-color 0.3s;
 }
 
@@ -84,11 +89,6 @@ label::before {
   transition: transform 0.3s, background-color 0.3s;
 }
 
-/* Быстрота */
-.speed-checkbox {
-  transition: background-color 0.3s;
-}
-
 #speed-checkbox:checked + .speed-checkbox {
   background-color: rgb(237, 241, 156);
   transition: background-color 0.3s;
@@ -108,11 +108,6 @@ label::before {
 #speed-checkbox:not(:checked) + label::before {
   transform: translateX(0);
   transition: transform 0.3s, background-color 0.3s;
-}
-
-/* Цена */
-.cheap-checkbox {
-  transition: background-color 0.3s;
 }
 
 #cheap-checkbox:checked + .cheap-checkbox {
@@ -136,46 +131,41 @@ label::before {
   transition: transform 0.3s, background-color 0.3s;
 }
 
-.text-center {
-  font-size: 30px;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.text {
-  font-size: 25px;
-  padding-left: 15px;
-  color: #fff;
-}
-
 @media (max-width: 600px) {
-  .container {
-    height: auto;
-  }
-
-  .left {
-    padding: 10px;
-    width: 100%;
-    border-radius: 0;
-  }
-
-  h1 {
-    font-size: 24px;
+  .checkbox__container {
+    width: 86%;
   }
 
   .text {
-    font-size: 16px;
+    font-size: 2.6rem;
   }
-  /*
+
   label {
-    width: 40px;
-    height: 20px;
+    width: 80px;
+    height: 45px;
   }
 
   label::before {
-    top: 2px;
-    left: 2px;
-    width: 16px;
-    height: 16px;
-  } */
+    top: 8px;
+    width: 30px;
+    height: 30px;
+  }
+
+  #quality-checkbox:checked + label::before {
+    transform: translateX(40px);
+  }
+
+  #speed-checkbox:checked + label::before {
+    transform: translateX(40px);
+  }
+
+  #cheap-checkbox:checked + label::before {
+    transform: translateX(40px);
+  }
+}
+
+@media (max-width: 400px) {
+  .checkbox__container {
+    width: 100%;
+  }
 }
